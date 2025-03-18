@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catering School - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        header {
+            background-color: #E91E63;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            color: white;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            gap: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .ctas {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .cta {
+            background-color: #E91E63;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Hero Section with Background Slideshow */
+        .hero {
+            text-align: center;
+            padding: 120px 50px 50px;
+            color: white;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+    position: relative; /* Keeps it above the slides */
+    z-index: 10; /* Ensures it stays visible */
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a slight background to improve readability */
+
+    border-radius: 5px;
+    display: inline-block;
+
+    height: 100%;
+    width: 100%;
+}
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        /* About Us */
+        .about, .courses, .team, .testimonials, .contact {
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Courses Section */
+        .courses {
+            background-color: #E91E63;
+        }
+        .course-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .course {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 1 1 200px;
+            max-width: 300px;
+        }
+
+        /* Team & Testimonials Slider */
+        .slider-container {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            justify-content: center;
+            position: relative;
+        }
+        .slide {
+            min-width: 400px;
+            margin: 0 10px;
+            text-align: center;
+            border: 3px solid pink;
+            transition: transform 0.5s ease-in-out;
+        }
+        .team img, .testimonials img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10%;
+        }
+
+        /* Contact Section with Google Map */
+        .map-container {
+            width: 100%;
+            height: 300px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+        .picture {
+            height: 50%;
+            width: 50%;
+            margin-left: 25%;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                background-color: #E91E63;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                padding: 10px 0;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .course-list {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><img src="Logo.jpg" alt="Catering School Logo"></div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="register.html" class="ctas">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Hero Section with Slideshow -->
+    <section class="hero">
+    <div class="hero-slide active" style="background-image: url('Slide2.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('Slide1.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('Slide3.jpg');"></div>
+    
+    <!-- Add this new div -->
+    <div class="hero-content">
+        <br><br><br><br>
+        <h1>Welcome to Our Catering School</h1>
+        <br><br>
+        <p>Learn the art of catering and fashion design with our expert-led courses.</p>
+        <br><br><br><br>
+        <a href="register.html" class="cta">Register Now</a>
+    </div>
+</section>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>We provide top-notch training in Catering, Hotel Management, and Fashion Design.</p>
+        <img class="imgs" src="home.jpg" alt="courses" width="100%" height="100%">
+    </section>
+
+    <!-- Team Section Slider -->
+    <section class="team">
+        <h2>Meet Our Experts</h2>
+        <div class="slider-container" id="team-slider">
+            <div class="slide"><img src="Director.jpg" alt=""><p>Rev Fr. Jerome Obiekezie - Director</p></div>
+            <div class="slide"><img src="Coordinator.jpg" alt=""><p>Mrs. Chinyere Madububa - Co-ordinator</p></div>
+            <div class="slide"><img src="Coordinator.jpg" alt=""><p>Mr. Daniel Eromosele - Academic Supervisor</p></div>
+        </div>
+    </section>
+    <div class="picture"> <img src="Logo.jpg" alt="courses" width="100%" height="100%"></div>
+    <!-- Testimonials Slider -->
+    <section class="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="slider-container" id="testimonial-slider">
+            <div class="slide"><img src="student1.jpg" alt=""><p>"This school changed my life!" - Alice</p></div>
+            <div class="slide"><img src="student2.jpg" alt=""><p>"The best training ever!" - James</p></div>
+            <div class="slide"><img src="student3.jpg" alt=""><p>"Highly recommended!" - Sarah</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Catering School. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+
+        // Hero Image Slideshow
+        let slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+
+        // Auto-slide function for Team & Testimonials
+        function autoSlide(id, interval) {
+            let container = document.getElementById(id);
+            setInterval(() => {
+                container.appendChild(container.firstElementChild);
+            }, interval);
+        }
+
+        autoSlide("team-slider", 3000);
+        autoSlide("testimonial-slider", 4000);
+    </script>
+</body>
+</html>

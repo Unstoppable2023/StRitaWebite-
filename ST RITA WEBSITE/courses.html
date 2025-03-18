@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Catering School</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        header {
+            background-color: #E91E63; /* Updated to correct pink */
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            display: none;
+            background: none;
+            border: none;
+            color: white; /* Ensures visibility */
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            gap: 30px;
+            margin-right: 20px;
+        }
+        .menu li {
+            display: inline;
+        }
+        .menu a {
+            text-decoration: none;
+            color: white; /* Changed to white for better contrast */
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background 0.3s ease;
+        }
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #E91E63; /* Full background coverage */
+                width: 100%;
+                height: auto;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                text-align: center;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu a {
+                padding: 15px;
+                display: block;
+                width: 100%;
+                color: white;
+            }
+            .menu-toggle {
+                display: block;
+                color: white;
+                margin-right: 40px;
+            }
+        }
+        .container {
+            padding: 100px 20px 40px;
+            text-align: center;
+        }
+        .courses {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        .courses h2 {
+            background-color: #E91E63; /* Match header color */
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        .courses ul {
+            list-style-type: none;
+            padding: 0;
+            columns: 2;
+        }
+        .courses li {
+            padding: 5px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="Logo.jpg" alt="Catering School Logo"></div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="menu">
+            <li><a href="home-page.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            <li><a href="register.html" class="cta">Register</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <h1>Our Courses</h1>
+        <img src="BG1.jpg" alt="courses" width="100%" height="10%">
+        <p>Select a department to view available courses.</p>
+        
+        <div class="courses">
+            <h2>Department of Catering and Hotel Management</h2>
+            <ul>
+                <li>Cookery Practical</li>
+                <li>Basic Catering</li>
+                <li>Use of English</li>
+                <li>Hotel Book Keeping</li>
+                <li>Front Office</li>
+                <li>Hotel Organization & Management</li>
+                <li>House Keeping</li>
+                <li>Nutrition and Hygiene</li>
+                <li>Food and Beverage Services</li>
+                <li>Tourism</li>
+                <li>Calculation, Costing, and Control</li>
+                <li>Research Methodology</li>
+                <li>Bakery Confectionaries</li>
+                <li>Provision of Food & Beverage</li>
+                <li>Food & Beverage Control</li>
+                <li>Cosmetology</li>
+                <li>Computer</li>
+            </ul>
+            
+            <h2>Department of Fashion and Clothing Design</h2>
+            <ul>
+                <li>Knitting</li>
+                <li>Use of English</li>
+                <li>Practical Cookery</li>
+                <li>Clothing & Cloth Designing</li>
+                <li>Research Methodology</li>
+                <li>Cosmetology</li>
+                <li>Bakery</li>
+                <li>Crochet</li>
+                <li>Crafts</li>
+                <li>Pattern Drafting</li>
+                <li>Computer</li>
+                <li>Textile Design</li>
+                <li>Bead Making</li>
+                <li>Salon</li>
+                <li>Makeup</li>
+                <li>Semi-Crafts</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Catering School. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
